@@ -1,0 +1,95 @@
+/*documento css para estilização de conteudo*/
+
+.div-cadastro{
+	width: 500px;
+	height: auto;
+	clear: both;
+	display: block;
+	border:solid 1px #ccc;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 60px;
+}
+
+h3{
+	margin: 0px;
+	padding: 0px;
+	margin-top: 30px;
+	font-size: 22px;
+}
+
+.linha{
+	width: 80%;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+label{
+	display: block;
+	padding: 0px;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+
+input{
+	display: block;
+	margin-left: 10px;
+	margin-top: 3px;
+	width: 50%;
+	height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #4d4d4d;
+ 
+}
+
+.btn{
+	width: 95px;
+	height: 35px;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	color:#fff;
+	border:none;
+	border-radius: 3px;
+	background-color: #4d4d4d;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+.btn:hover{
+	cursor: pointer;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top:20px;
+    float: left;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+    height: 30px;
+}
+
+th{
+	color: #808080;
+	font-size: 16px;
+	font-family: Arial;
+}
+
+td{
+	font-family: Arial;
+	color: #4d4d4d;
+	font-size: 14px;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}

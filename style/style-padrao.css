@@ -1,0 +1,178 @@
+/*CSS PADRÃO PARA TODAS AS PAGINAS*/
+
+*{
+	font-size: 17px;
+	font-family: Arial;
+	color:#4d4d4d;
+	text-align: justify;
+}
+
+body{
+	padding: 0px;
+	margin: 0px;
+}
+/*TITULOS*/
+
+
+h1{
+	text-align: center;
+	text-decoration: underline;
+	font-size: 19px;
+}
+
+h2{
+	text-align: center;
+	font-size: 14px;
+}
+
+/**/
+#corpo{
+	width: 990px;
+	height: auto;
+	margin: 0 auto;
+	border:none;
+}
+
+header{
+	float: left;
+	width: 100%;
+	height: 300px;
+	border:none; 
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#div-logo{
+	float: left;
+	width: 450px;
+	height: 95%;
+	border:solid 1px #000;
+	background-color: #000;
+}
+
+#div-info{
+	width: auto;
+	height: auto;
+	float: right;
+	border:none;
+}
+
+a{
+	text-decoration: none;
+}	
+
+h4{
+	color: #fff;
+	font-size: 26px;
+	padding: 0px;
+	margin: 0px;
+	margin-left: 20px;
+	margin-top: 20px;
+	float: left;
+}
+
+/*MENU DROPDOWN OPÇÃO USUÁRIO*/
+
+.dropbtn {
+    background-color: #8c8c8c;
+    color:#f2f2f2;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 15px;
+    float: right;
+  	border-bottom-left-radius: 5px;
+  	border-bottom-right-radius: 5px;
+  	background-image: url(../img/icon-user-info.png);
+  	background-repeat: no-repeat;
+  	background-position: right;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    width: 100px;
+    padding: 15px;
+    clear: both;
+    margin-top: 3px;
+    float: right;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.dropdown-content a:hover {
+	background-color: #f2f2f2;
+}
+
+.show {
+	display:block;
+}
+
+
+/*menu*/
+
+nav{
+	width: 100%;
+	height: 50px;
+	border:none;
+	float: left;
+	background-color: #4d4d4d;
+}
+
+#listamenu{
+	list-style-type: none;
+	margin-top: 15px;
+    padding: 0;
+}
+
+#listamenu li{
+	display: block;
+	float: left;
+	padding-left: 60px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 18px;
+}
+
+
+.li-menu{
+	color: #fff;
+	font-size: 18px;
+}
+
+
+.li-menu:hover{
+	color:#5af;
+	cursor: pointer;
+}
+
+/*div conteudo*/
+#conteudo{
+	width: 100%;
+	float: left;
+	height: auto;
+	border:none;
+}
+
+footer{
+	width: 100%;
+	height: auto;
+	border-top: solid 3px #ccc;
+	margin-top: 50px;
+	float: left;
+}
