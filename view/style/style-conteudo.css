@@ -40,7 +40,6 @@ input{
 	width: 50%;
 	height: 35px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     box-sizing: border-box;
     color: #4d4d4d;
  
@@ -64,6 +63,50 @@ input{
 	cursor: pointer;
 }
 
+.div-cadastro-produto{
+	width: 900px;
+	height: auto;
+	clear: both;
+	display: block;
+	border:solid 1px #ccc;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 60px;
+}
+
+.div-select-estoque{
+
+	float: left;
+	
+}
+.div-preco-estoque{
+	float: left;
+}
+
+.div-preco-estoque input{
+	width:100px;
+	
+}
+
+.div-estoque{
+	clear:left;
+}
+
+.div-cadastro-produto table{
+	margin-bottom: 60px;
+
+}
+
+select{
+	margin-left: 10px;
+	margin-top: 3px;
+    color: #4d4d4d;
+	width: 250px;
+	height: 35px;
+}
+select option{
+	margin-top: 3px;
+}
 
 table {
     border-collapse: collapse;
