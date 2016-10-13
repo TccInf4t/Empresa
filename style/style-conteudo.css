@@ -1,6 +1,28 @@
 /*documento css para estilização de conteudo*/
 
-.div-cadastro{
+/* Lista de Estoque */
+#estoque {
+	padding:20px 0;
+	/*background-color:#ddd;*/
+}
+
+.chBox {
+	width:30px;height:30px;
+}
+
+.optEstoque {
+	padding:10px 0;
+}
+
+.optBox > input {
+	display:inline;
+}
+
+.optBox > label {
+	display:inline;
+}
+
+.div-cadastro {
 	width: 500px;
 	height: auto;
 	clear: both;
@@ -11,7 +33,7 @@
 	margin-bottom: 60px;
 }
 
-h3{
+h3 {
 	margin: 0px;
 	padding: 0px;
 	margin-top: 30px;
@@ -33,7 +55,7 @@ label{
 	margin-top: 15px;
 }
 
-input{
+input {
 	display: block;
 	margin-left: 10px;
 	margin-top: 3px;
