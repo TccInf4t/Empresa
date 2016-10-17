@@ -12,6 +12,7 @@
 	$slMarca 		= "";
 	$slTipoPeca 	= "";
 	$txtDescricao 	= "";
+	$listaEstoque 	= [];
 
 	$btn = "Salvar";
 	$idEditar = "";
@@ -35,8 +36,14 @@
 			$slTipoPeca 	= $rs['oid_tipopeca'];
 			$txtDescricao 	= $rs['descricao'];
 
+			$exec = mysql_query("select * from peca_estoque where oid_peca = ". $id .";");
+
+			$listaEstoque = [];
+			while($rs = mysql_fetch_array($exec)) $listaEstoque[] = $rs;
+
 			$btn = "Editar";
 			$idEditar = "?id=". $id;
+
 		}
 	}
 ?>
@@ -63,9 +70,12 @@
 				<hr class="linha">
 
 				<div class="div-cadastro-produto">
-					<form action="crud/produto.php" method="post" name="formulario-produto">
+					<form action="crud/produto.php<?php echo($idEditar); ?>" enctype="multipart/form-data" method="post" name="formulario-produto">
 						<label>Nome</label>
 						<input type="text" name="txtNome" value="<?php echo($txtNome); ?>" placeholder="Nome do produto" />
+
+						<label>Imagem</label>
+						<input type="file" name="arqImagem" />
 						
 						<label>Ano</label>
 						<input type="date" name="dtAno" value="<?php echo($dtAno); ?>" placeholder="Ano do produto" />
@@ -107,14 +117,32 @@
 						<!-- Carregando a Lista de Estoques Cadastrados -->
 						<div id="estoque">
 							<?php
+								$chSelected 	= "";
+								$txtQtdMin 		= "";
+								$txtQtdAtual	= "";
+
 								$exec = mysql_query("select * from estoque;");
 								while($rs = mysql_fetch_array($exec)){
+									$chSelected 	= "";
+									$txtQtdMin 		= "";
+									$txtQtdAtual	= "";
+
+									for($i=0; $i<count($listaEstoque); $i++){
+										if($rs['oid_estoque'] == $listaEstoque[$i]['oid_estoque']){
+											$chSelected 	= "checked";
+											$txtQtdMin 		= $listaEstoque[$i]['qtdmin'];
+											$txtQtdAtual	= $listaEstoque[$i]['qtdatual'];
+											break;
+										}
+									}
 							?>
-							<div class="optEstoque">
+							<div class='optEstoque'>
 								<label><?php echo($rs['nomeexibicao']); ?></label>
-								<input type="checkbox" class="chBox" name="estoqueNome<?php echo($rs['oid_estoque']); ?>" value="<?php echo($rs['oid_estoque']); ?>" />
-								<input type="text" name="estoqueQtdMinima<?php echo($rs['oid_estoque']); ?>" placeholder="Quatidade Mínima" />
-								<input type="text" name="estoqueQtdAtual<?php echo($rs['oid_estoque']); ?>" placeholder="Quatidade Atual" />
+								<input type="checkbox" class="chBox" <?php echo($chSelected); ?> name="estoqueNome<?php echo($rs['oid_estoque']); ?>" value="<?php echo($rs['oid_estoque']); ?>" />
+
+								<input type="text" name="estoqueQtdMinima<?php echo($rs['oid_estoque']); ?>" placeholder="Mínima" value="<?php echo($txtQtdMin); ?>" />
+
+								<input type="text" name="estoqueQtdAtual<?php echo($rs['oid_estoque']); ?>" placeholder="Atual" value="<?php echo($txtQtdAtual); ?>" />
 							</div>
 							<?php } ?>
 						</div>
@@ -129,7 +157,7 @@
 							<th>Editar</th>
 						</tr>
 						<?php
-							$exec = mysql_query("select * from peca;");
+							$exec = mysql_query("select * from peca order by oid_peca desc;");
 							while($rs = mysql_fetch_array($exec)){
 						?>
 						<tr>
